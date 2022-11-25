@@ -1,0 +1,21 @@
+{% extends "auctions/layout.html" %}
+{% load custom_filters %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}   
+    
+    <a href="{% url 'listing2' listing.id %}">
+        <h3>{{listing.listing_title}}</h3>
+        {% if listing.listing_image %}
+            <img src="{{ listing.listing_image.url }}">
+        {% endif %}      
+        <p>{{ listing.listing_description }}</p>
+        <p>{{ listing.listing_current_price | currency }}</p>
+    </a>
+    <br>
+    {% empty %}
+    <h1>No listings</h1>
+    {% endfor %}
+{% endblock %}

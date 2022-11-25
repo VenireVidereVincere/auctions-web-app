@@ -1,0 +1,7 @@
+.venv/
+db.sqlite3
+sqlite3.exe
+auctions/__pycache__/
+auctions/migrations
+auctions/uploads
+commerce/__pycache__/
