@@ -94,7 +94,7 @@ def create_listing(request):
 def listing(request, listing_id, message=""):
     listing = Listing.objects.get(pk=listing_id)
     listing_in_watchlist = request.user in listing.listing_watchlist.all()
-    comments = Comment.objects.filter(comment_user = request.user, comment_listing = listing)
+    comments = Comment.objects.filter(comment_listing = listing)
     return render(request, "auctions/listing.html",{
         "listing": listing,
         "listing_in_watchlist": listing_in_watchlist,
