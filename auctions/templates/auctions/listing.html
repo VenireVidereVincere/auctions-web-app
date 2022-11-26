@@ -49,7 +49,7 @@
 
     <h3>{{listing.listing_title}}</h3>
     {% if listing.listing_category%}
-        <h5>{{listing.listing_category}}</h5>
+        <h5>{{listing.listing_category.category_name}}</h5>
     {% endif %}
     {% if listing.listing_image %}
         <img src="{{ listing.listing_image.url }}">
